@@ -34,5 +34,6 @@ describe("Attacking King", function () {
     }
     const king = await victim._king();
     expect(king).to.not.equal(kingPlayer.address);
+    expect(king).to.equal(attacker.address);
   });
 });

@@ -2,8 +2,8 @@
 pragma solidity ^0.8.9;
 
 contract Vault {
-  bool public locked;
-  bytes32 private password;
+  bool public locked; // slot 0
+  bytes32 private password; // slot 1
 
   constructor(bytes32 _password) {
     locked = true;
