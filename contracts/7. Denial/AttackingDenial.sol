@@ -5,6 +5,7 @@ import "hardhat/console.sol";
 
 contract AttackingDenial {
     address payable public contractAddress;
+    uint public timesCalled;
 
     constructor(address payable _contractAddress) {
         contractAddress = _contractAddress;
@@ -12,8 +13,6 @@ contract AttackingDenial {
     
     fallback() external payable {
         console.log("In fallback");
-        // Why doesn't assert work here?
-        // assert(false);        
-        revert("Test");
+        timesCalled++;
     }
 }
